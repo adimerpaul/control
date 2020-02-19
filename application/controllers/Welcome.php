@@ -24,8 +24,8 @@ class Welcome extends CI_Controller {
 	}
 	function login(){
 	    $usuario=$_POST['usuario'];
-        $clave=$_POST['clave'];
-        $query=$this->db->query("SELECT * FROM usuario WHERE usuario='$usuario' AND clave='$clave' AND estado='ACTIVO'");
+        $clave=$_POST['usuario'];
+        $query=$this->db->query("SELECT * FROM docente WHERE usuario='$usuario' AND password='$clave' AND estado='ACTIVO'");
         if ($query->num_rows()=="1"){
             $_SESSION['tipo']=$query->row()->tipo;
             $_SESSION['nombre']=$query->row()->nombre;
@@ -41,5 +41,12 @@ class Welcome extends CI_Controller {
     function logout(){
 	    session_destroy();
 	    header("Location: ".base_url());
+    }
+    function insert(){
+	    $nombre=strtoupper($_POST['nombre']);
+        $usuario=$_POST['usuario'];
+        $clave=$_POST['clave'];
+        $this->db->query("INSERT INTO docente SET nombre='$nombre',usuario='$usuario',password='$clave'");
+        echo 1;
     }
 }
