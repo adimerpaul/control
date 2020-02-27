@@ -24,14 +24,16 @@ class Welcome extends CI_Controller {
 	}
 	function login(){
 	    $usuario=$_POST['usuario'];
-        $clave=$_POST['usuario'];
+        $clave=$_POST['clave'];
         $query=$this->db->query("SELECT * FROM docente WHERE usuario='$usuario' AND password='$clave' AND estado='ACTIVO'");
+//        echo $query->num_rows();
+//        exit;
         if ($query->num_rows()=="1"){
-            $_SESSION['tipo']=$query->row()->tipo;
+            $_SESSION['iddocente']=$query->row()->iddocente;
             $_SESSION['nombre']=$query->row()->nombre;
             $_SESSION['usuario']=$query->row()->usuario;
-            $_SESSION['idusuario']=$query->row()->idusuario;
-            $_SESSION['turno']=$query->row()->turno;
+//            $_SESSION['idusuario']=$query->row()->idusuario;
+//            $_SESSION['turno']=$query->row()->turno;
             header('Location: '.base_url().'Main');
         }else{
             header('Location: '.base_url());
@@ -43,10 +45,23 @@ class Welcome extends CI_Controller {
 	    header("Location: ".base_url());
     }
     function insert(){
-	    $nombre=strtoupper($_POST['nombre']);
-        $usuario=$_POST['usuario'];
-        $clave=$_POST['clave'];
-        $this->db->query("INSERT INTO docente SET nombre='$nombre',usuario='$usuario',password='$clave'");
-        echo 1;
+
+            $nombre=strtoupper($_POST['nombre']);
+            $usuario=$_POST['usuario'];
+            $clave=$_POST['clave'];
+//            $query=$this->db->query("INSERT INTO docente SET nombre='$nombre',usuario='$usuario',password='$clave'");
+//            if ($query){
+//                echo 1;
+//            }
+        if ($this->db->simple_query("INSERT INTO docente SET nombre='$nombre',usuario='$usuario',password='$clave'"))
+        {
+            echo "1";
+        }
+        else
+        {
+            echo "Query failed!";
+        }
+
+
     }
 }

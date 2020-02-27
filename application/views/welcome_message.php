@@ -134,7 +134,7 @@
                         toastr.success('Creado correctamnte','ahora puedes logearte')
                         $('#formulario')[0].reset();
                     }else{
-                        toastr.warning(e);
+                        toastr.error('No se pudo crear al usuario por que el nombre de docente o el nombre de usuario ya fue creado');
                     }
                 }
             });

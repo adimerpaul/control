@@ -1,7 +1,7 @@
 <?php
 class Main extends CI_Controller{
     function index(){
-        if ($_SESSION['tipo']==""){
+        if ($_SESSION['iddocente']==""){
             header("Location: ".base_url());
         }
         $this->load->view('templates/header');

@@ -23,8 +23,12 @@
 <script src="<?=base_url()?>vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="<?=base_url()?>vendors/nprogress/nprogress.js"></script>
-
+<script src="<?=base_url()?>vendors/iCheck/icheck.min.js"></script>
 <!-- Custom Theme Scripts -->
+
+<script src="<?=base_url()?>vendors/toastr/js/toastr.min.js"></script>
+
 <script src="<?=base_url()?>build/js/custom.min.js"></script>
+
 </body>
 </html>

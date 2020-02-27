@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Quimicos!  </title>
+    <title>Evaluacion!  </title>
 
     <!-- Bootstrap -->
     <link href="<?=base_url()?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,8 @@
 
     <!-- Custom Theme Style -->
     <link href="<?=base_url()?>build/css/custom.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="<?=base_url()?>vendors/toastr/css/toastr.css">
 </head>
 
 <body class="nav-md">
@@ -26,7 +28,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="<?=base_url()?>Main" class="site_title"><i class="fa fa-paw"></i> <span>Quimicos!</span></a>
+                    <a href="<?=base_url()?>Main" class="site_title"><i class="fa fa-paw"></i> <span>Evaluacion!</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -51,17 +53,16 @@
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-
                             <li><a href="<?=base_url()?>Main"><i class="fa fa-home"></i> Home </a></li>
-                            <?php if ($_SESSION['tipo']=='admin'):?>
-                            <li><a href="<?=base_url()?>Usuario"><i class="fa fa-users"></i> Usuarios </a></li>
-                            <li><a href="<?=base_url()?>Registros"><i class="fa fa-edit"></i> Registro </a></li>
+                            <?php // if ($_SESSION['tipo']=='admin'):?>
+<!--                            <li><a href="--><?//=base_url()?><!--Usuario"><i class="fa fa-users"></i> Usuarios </a></li>-->
+<!--                            <li><a href="--><?//=base_url()?><!--Registros"><i class="fa fa-edit"></i> Registro </a></li>-->
+<!--                            <li><a href="--><?//=base_url()?><!--Historial" ><i class="fa fa-table"></i> Historial </a></li>-->
+<!--                            <li><a href="--><?//=base_url()?><!--Reportes" ><i class="fa fa-file-excel-o"></i> Reportes </a></li>-->
+                            <?php // else:?>
+                            <li><a href="<?=base_url()?>Evaluacion"><i class="fa fa-edit"></i> Evaluacion </a></li>
                             <li><a href="<?=base_url()?>Historial" ><i class="fa fa-table"></i> Historial </a></li>
-                            <li><a href="<?=base_url()?>Reportes" ><i class="fa fa-file-excel-o"></i> Reportes </a></li>
-                            <?php else:?>
-                            <li><a href="<?=base_url()?>Registros"><i class="fa fa-edit"></i> Registro </a></li>
-                            <li><a href="<?=base_url()?>Historial" ><i class="fa fa-table"></i> Historial </a></li>
-                            <?php endif;?>
+                            <?php // endif;?>
                         </ul>
                     </div>
                     <div class="menu_section">
